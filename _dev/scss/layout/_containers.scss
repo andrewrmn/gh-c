@@ -1,0 +1,130 @@
+
+// ---------------------------------------------------------------------
+//  Container Styles
+// ---------------------------------------------------------------------
+
+.container {
+    @include container;
+}
+
+.container-full {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.container-wide {
+    @include container;
+    max-width: 1440px;
+}
+
+// ----------------------------------------
+// Extensions
+// ----------------------------------------
+
+.container--thin {
+    max-width: 760px;
+}
+
+
+.container-full--shape-bottom {
+    overflow: hidden;
+
+    &:after {
+        width: 102%;
+        height: 80px;
+        left: -1%;
+        bottom: -1px;
+        content: '';
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+    }
+}
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+.bg-brand {
+    background: $brand;
+}
+
+.bg-constellation {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        content: '';
+        background: url('../images/shapes/constellation.svg') center / cover no-repeat;
+        display: block;
+        z-index: -1;
+    }
+}
+
+.bg-black {
+    background: $black;
+}
+
+.constellation-shape-wrap {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    padding-top: 50px;
+
+    @include start-at($medium) {
+        padding-top: 90px;
+    }
+}
+
+.constellation-shapes {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: $black url('../images/shapes/constellation.svg') center / cover no-repeat;
+
+    @include start-at($small) {
+        height: 85%;
+    }
+
+
+    &:before {
+        width: 102%;
+        height: 80px;
+        left: -1%;
+        top: -1px;
+        content: '';
+        background: url('../images/shapes/shape-top.svg') top center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+    }
+
+    &:after {
+        width: 102%;
+        height: 80px;
+        left: -1%;
+        bottom: -1px;
+        content: '';
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+    }
+}
+
+.isIE {
+    .constellation-shapes:before {
+        background: url('../images/shapes/shape-top.svg') bottom center / 122% auto no-repeat;
+    }
+    .constellation-shapes:after {
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 122% auto no-repeat;
+    }
+}

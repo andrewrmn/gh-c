@@ -1,0 +1,282 @@
+// ---------------------------------------------------------------------
+//  Event Styles (Single Page)
+// ---------------------------------------------------------------------
+
+.event-header {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    z-index: 1;
+    color: $white;
+
+    @include start-at($small) {
+        min-height: 568px;
+        padding: 80px 0;
+    }
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        content: '';
+        background: url('../images/shapes/constellation.svg') center / cover no-repeat;
+        display: block;
+        z-index: -1;
+    }
+
+    &:after {
+        width: 102%;
+        height: 80px;
+        left: -1%;
+        bottom: -1px;
+        content: '';
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+        z-index: 0;
+    }
+}
+
+.event-header__inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 0;
+
+    @include start-at($small) {
+        padding: 60px 0 60px;
+    }
+
+    .btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.isIE {
+    .event-header {
+        &:before {
+            background: url('../images/shapes/constellation.svg') center / 150% no-repeat;
+        }
+
+        &:after {
+            background: url('../images/shapes/shape-bottom.svg') bottom center / 150% auto no-repeat;
+        }
+        .event-header__inner {
+            justify-content: flex-start;
+        }
+    }
+}
+
+.event-header__intro {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// ----------------------------------------
+// Overview
+// ----------------------------------------
+
+.event-header__overview {
+    > * + * {
+        margin-top: 30px;
+        position: relative;
+
+        &:before {
+            content: "";
+            height: 1px;
+            width: 80%;
+            background: $white;
+            display: block;
+            margin: 0 auto 20px;
+            transform-origin: center;
+            transform: scale(0);
+            transition: transform 0.8s ease;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            background: $white;
+            display: block;
+            top: -5px;
+            left: 10%;
+            transition: all 1.2s ease;
+            
+        }
+
+        &.in-view {
+            &:before {
+                transform: scale(1);
+            }
+
+            &:after {
+
+                transition-delay: 0.8s;
+                left: calc(50% - 5px);
+            }
+        }
+    }
+
+    @include start-at($medium) {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+
+        > * {
+            width: calc(50% - 30px);
+        }
+
+        > * + * {
+            margin-top: 0;
+
+            &:before {
+                height: 100%;
+                width: 1px;
+                background: $white;
+                display: block;
+                position: absolute;
+                left: -30px;
+                top: 0;
+                transform-origin: top;
+            }
+
+            &:after {
+                top: 0;
+                left: -34px;
+            }
+
+            &.in-view {
+                &:before {
+                    transform: scale(1);
+                }
+
+                &:after {
+                    top: 100%;
+                    left: -34px;
+                }
+            }
+        }
+    }
+}
+
+
+// ----------------------------------------
+// Event Logo
+// ----------------------------------------
+.event-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    img {
+        width: 60px;
+        margin-right: 20px;
+    }
+
+    h2 {
+        @include base-heading-styles;
+        font-size: 5.2rem;
+        letter-spacing: 3px;
+        transition: all $trans;
+    }
+
+    @include start-at($medium) {
+        img {
+            width: 105px;
+            margin-right: 40px;
+        }
+
+        h2 {
+            font-size: 7.4rem;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+
+
+// ----------------------------------------
+// Fancy Header
+// ----------------------------------------
+
+.fancy-header {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    margin-bottom: 40px;
+
+    figure {
+        display: block;
+        position: absolute;
+        width: 162px;
+        height: 120px;
+        top: calc(50% - 60px);
+        left: calc(50% - 81px);
+        transition: transform 0.8s ease;
+        transform-origin: center;
+        transform: scale(0);
+        z-index: -1;
+
+        svg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+        }
+    }
+
+    &.in-view {
+        figure {
+            transform: scale(1);
+        }
+    }
+}
+
+// ------------------------------------
+// Event Day Intro
+// ------------------------------------
+.event-day__info  {
+    margin-bottom: 60px;
+
+    @include start-at($medium){
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        margin-bottom: 120px;
+    }
+}
+
+.event-day__info__sidebar {
+    width: 100%;
+    margin-bottom: 30px;
+
+    @include start-at($medium){
+        width: 30%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+.event-day__info__content {
+    width: 100%;
+
+    @include start-at($medium){
+        width: 70%;
+    }
+}

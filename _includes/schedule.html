@@ -1,0 +1,108 @@
+<section class="schedule-wrap section page-section" id="schedule">
+    <header class="fancy-header theme-color container" data-animate-in="up">
+        <h3 class="h1">Schedule</h3>
+        <figure>
+            <svg><use xlink:href="#shape-cluster"></use></svg>
+        </figure>
+    </header>
+    <div class="schedule">
+        <div class="schedule-day">
+            <div class="schedule-day__title">
+                <h3 class="h3">Wed</h3>
+                <h4 class="h4">September 26</h4>
+            </div>
+            <div class="schedule-day__events">
+
+                {% for session in event.day1Sessions %}
+
+                    <div class="event" {% for speaker in event.speakers %}{% if speaker.id == session.speaker %}data-click-target="{{ speaker.id }}" data-click-bodyClass="modal-is-active"{% endif %}{% endfor %} data-animate-in="up">
+                        <div class="event__time">
+                            <div class="h4">{{ session.time }}</div>
+                        </div>
+                        <div class="event__title">
+                            <h3 class="p-lg">{{ session.title }}</h3>
+                            {% for speaker in event.speakers %}
+                                {% if speaker.id == session.speaker %}
+                                <p class="event__speaker">{{ speaker.name }}, {{ speaker.company }}</p>
+                                {% assign hasModal = 'true' %}
+
+                                {{  }}
+                                {% endif %}
+                            {% endfor %}
+                            {% if session.description|length %}
+                            <p class="event__speaker">{{ session.description }}</p>
+                            {% endif %}
+                        </div>
+                        {% if hasModal == 'true' %}
+                        <span class="event-arrow"><svg><use xlink:href="#shape-arrow-right"></use></svg></span>
+                        {% assign hasModal = 'false' %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="schedule-day">
+            <div class="schedule-day__title">
+                <h3 class="h3">Thurs</h3>
+                <h4 class="h4">September 27</h4>
+            </div>
+            <div class="schedule-day__events">
+                {% for session in event.day2Sessions %}
+
+                    {% if session.multipleSpeakers == true %}
+
+                        <div class="event event--multiple-speakers" data-animate-in="up">
+                            <div class="event__time">
+                                <div class="h4">{{ session.time }}</div>
+                            </div>
+                            <div class="event__title">
+                                <h3 class="p-lg">{{ session.title }}</h3>
+                                <p class="event__speaker event__speaker--list">
+                                {% for item in session.speakerList %}
+                                    {% for speaker in event.speakers %}
+                                        {% if speaker.id == item.speaker %}
+                                            <span data-click-target="{{ speaker.id }}" data-click-bodyClass="modal-is-active">{{ speaker.name }}, {{ speaker.company }}</span>
+                                        {% endif %}
+                                    {% endfor %}
+                                {% endfor %}
+                                </p>
+
+                                {% if session.description|length %}
+                                <p class="event__speaker">{{ session.description }}</p>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                    {% else %}
+                        <div class="event" {% for speaker in event.speakers %}{% if speaker.id == session.speaker %}data-click-target="{{ speaker.id }}" data-click-bodyClass="modal-is-active"{% endif %}{% endfor %} data-animate-in="up">
+                            <div class="event__time">
+                                <div class="h4">{{ session.time }}</div>
+                            </div>
+                            <div class="event__title">
+                                <h3 class="p-lg">{{ session.title }}</h3>
+                                {% for speaker in event.speakers %}
+                                    {% if speaker.id == session.speaker %}
+                                    <p class="event__speaker">{{ speaker.name }}, {{ speaker.company }}</p>
+                                    {% assign hasModal = 'true' %}
+                                    {% endif %}
+                                {% endfor %}
+                                {% if session.description|length %}
+                                <p class="event__speaker">{{ session.description }}</p>
+                                {% endif %}
+                            </div>
+                            {% if hasModal == 'true' %}
+                            <span class="event-arrow"><svg><use xlink:href="#shape-arrow-right"></use></svg></span>
+                            {% assign hasModal = 'false' %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,200 @@
+// ---------------------------------------------------------------------
+//  Typography Styles
+// ---------------------------------------------------------------------
+
+@mixin display-heading {
+    display: block;
+    font-family: $display;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 400;
+}
+
+.h1-display {
+    @include display-heading;
+    font-size: 3.2rem;
+
+    @include start-at($medium) {
+        font-size: 4.0rem;
+    }
+}
+
+.h2-display {
+    @include display-heading;
+    font-size: 1.6rem;
+
+    @include start-at($medium) {
+        font-size: 1.8rem;
+    }
+}
+
+.h3-display {
+    @include display-heading;
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+}
+
+// ----------------------------------------
+// Heading Mixins
+// ----------------------------------------
+
+@mixin base-heading-styles {
+    display: block;
+    font-family: $heading;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+
+@mixin h1 {
+    @include base-heading-styles;
+    font-size: 4.8rem;
+    line-height: 1.25;
+    letter-spacing: 3px;
+
+    @include start-at($medium) {
+
+    }
+}
+
+@mixin h2 {
+    display: block;
+    font-family: $sans-serif;
+    font-size: 3.6rem;
+    font-weight: 400;
+}
+
+@mixin h3 {
+    @include base-heading-styles;
+    font-size: 3.2rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+@mixin h4 {
+    @include base-heading-styles;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+@mixin h5 {
+    @include base-heading-styles;
+    font-size: 2.0rem;
+    line-height: 1.55;
+    letter-spacing: 1px;
+}
+
+@mixin h6 {
+    @include base-heading-styles;
+    font-size: 1.6rem;
+    line-height: 1.55;
+    letter-spacing: 2px;
+}
+
+
+// ----------------------------------------
+// Headings
+// ----------------------------------------
+
+.h1 {
+    @include h1;
+}
+
+.h2 {
+    @include h2;
+}
+
+.h3 {
+    @include h3;
+}
+
+.h4 {
+    @include h4;
+}
+
+.h5 {
+    @include h5;
+}
+
+.h6 {
+    @include h6;
+}
+
+
+// ----------------------------------------
+// Paragraph Styles
+// ----------------------------------------
+
+@mixin para {
+    display: block;
+    font-family: $sans-serif;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+
+@mixin p-lg {
+    font-size: 2.0rem;
+    line-height: 1.5;
+    font-weight: 400;
+
+    @include start-at($medium) {
+        font-size: 2.4rem;
+    }
+}
+
+@mixin p-sm {
+    font-size: 1.6rem;
+    letter-spacing: 0.3px;
+}
+
+.p,
+p {
+    @include para;
+
+    a {
+        text-decoration: underline;
+        font-style: italic;
+    }
+}
+
+.p-lg,
+.lead {
+    @include p-lg;
+
+
+}
+
+.p-sm,
+small {
+  @include p-sm;
+}
+
+
+// ----------------------------------------
+// Type Utilities
+// ----------------------------------------
+
+.text-560 {
+    max-width: 560px;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-thin {
+    max-width: 750px;
+}
+
+address {
+    font-style: normal;
+}

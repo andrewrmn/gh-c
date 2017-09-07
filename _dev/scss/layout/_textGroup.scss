@@ -1,0 +1,43 @@
+// ---------------------------------------------------------------------
+//  Text Group Styles
+// ---------------------------------------------------------------------
+
+
+@mixin text-group($module-name, $margin-size) {
+	> * {
+	    margin-bottom: $margin-size;
+	}
+
+	.#{$module-name}__hd {
+	    margin-bottom: ($margin-size * 2);
+	}
+
+	.#{$module-name}__ft {
+	    margin-top: ($margin-size * 2);
+	}
+}
+
+$text-group-gap: 12px;
+$text-group-gap-short: 8px;
+$text-group-gap-tall: 30px;
+
+.text-group,
+.text-group-short,
+.text-group-tall {
+
+	> *:last-child {
+	   margin-bottom: 0;
+   }
+}
+
+.text-group {
+	@include text-group(text-group, 20px);
+}
+
+.text-group-short {
+	@include text-group(text-group-short, 8px);
+}
+
+.text-group-tall {
+	@include text-group(text-group-tall, 40px);
+}

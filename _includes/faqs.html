@@ -1,0 +1,30 @@
+
+
+<!-- FAQ Section -->
+<section class="faq-wrap section page-section" id="FAQ">
+    <div class="border-section">
+        <div class="border-section__inner">
+            <header class="fancy-header theme-color" data-animate-in="up">
+                <p class="h1">FAQ</p>
+                <figure>
+                    <svg><use xlink:href="#shape-cluster"></use></svg>
+                </figure>
+            </header>
+
+            <div class="container container--thin section section--tall">
+                <ul class="faq-questions">
+                    {% for faq in event.faqs %}
+                    <li data-animate-in="up">
+                        <h5 class="question">{{ faq.question }}</h5>
+                        <p class="answer">{{ faq.answer }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <span class="border-section__dots-left" data-detect-viewport=""></span>
+            <span class="border-section__dots-right" data-detect-viewport=""></span>
+            <span class="border-section__dots-bottom" data-detect-viewport=""></span>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+- city: Madrid
+  country: Spain
+  date: September 26 – 27, 2017
+  startDate: Set. 26
+  endDate: Set. 27
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: red
+  ticketLink: https://githubuniverse.com/register.html
+  events:
+    - title:
+      description:
+
+- city: Munich
+  country: Germany
+  date: October 19 – 20, 2017
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: gold
+  events:
+    - title:
+      description:
+
+- city: Brisbane
+  country: Australia
+  date: October 23 – 24, 2017
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: teal
+  events:
+    - title:
+      description:
+
+- city: Auckland
+  country: New Zealand
+  date: October 25 – 26, 2017
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: navy
+  events:
+    - title:
+      description:
+
+
+- city: Melbourne
+  country: Australia
+  date: November 1 – 2, 2017
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: purple
+  events:
+    - title:
+      description:

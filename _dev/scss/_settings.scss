@@ -1,0 +1,96 @@
+// ---------------------------------------------------------------------
+//  SCSS Settings
+// ---------------------------------------------------------------------
+
+
+// ----------------------------------------
+// Fonts
+// ----------------------------------------
+
+// Font weights: Medium: 500
+$heading: "futura-pt-condensed", "Arial Narrow", "Trebuchet MS", sans-serif;
+
+// Font weights: 400 | italics
+$sans-serif: "source-sans-pro", sans-serif;
+
+$display: 'track', serif;
+
+
+// ----------------------------------------
+// Font Size/ Line Height
+// ----------------------------------------
+$main-font: $sans-serif;
+$base-font-size: 1.8rem;
+$base-line-height: 1.55;
+
+
+// ----------------------------------------
+// Colors
+// ----------------------------------------
+
+$brand: #1A1D1E;
+$purple: #4D3952;
+$teal: #588C89;
+$gold: #B67E20;
+$navy: #1B2534;
+$red: #852925;
+
+$pink: #BE6362;
+
+$darkred: #510314;
+$blue: #344152;
+$darkpurple: #201e2e;
+$green: #0e332f;
+
+
+
+
+
+$black: #1A1D1E;
+$gray-dark: #535656;
+$gray-light: #F9F9F9;
+
+$white: #ffffff;
+
+
+$gray: #696B6B;
+
+
+$error: #ff0000;
+
+
+// ----------------------------------------
+// Breakpoints
+// ----------------------------------------
+
+$xlarge: 1450px;
+$large: 1025px;
+$medium: 850px;
+$small: 600px;
+
+@mixin start-at($device-width) {
+  @media (min-width: $device-width) {
+    @content;
+  }
+}
+
+@mixin stop-at($device-width) {
+  @media (max-width: $device-width - 1) {
+    @content;
+  }
+}
+
+
+// ----------------------------------------
+// Global Variables
+// ----------------------------------------
+
+$header-breakpoint: $medium;
+
+$transition-speed: 0.3s;
+$transition: $transition-speed ease-out;
+$trans: $transition;
+
+$container-percentage: 92%;
+$container-width: 1005px;
+$container-padding: (100% - $container-percentage) / 2;

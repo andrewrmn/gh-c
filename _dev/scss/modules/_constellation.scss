@@ -1,0 +1,212 @@
+// ---------------------------------------------------------------------
+//  Constellation Styles
+// ---------------------------------------------------------------------
+
+.constellation-header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 568px;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    z-index: 1;
+    overflow: hidden;
+    background: $black;
+    transition: background 1s ease;
+
+    .page-loaded & {
+        transition-delay: 0.2s;
+        background: #2B2E2F;
+    }
+
+    &:before {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        content: '';
+        background: url('../images/shapes/constellation-outline.svg') center / cover no-repeat;
+        display: block;
+        z-index: 2;
+    }
+
+    &:after {
+        width: 100%;
+        height: 80px;
+        left: 0;
+        bottom: -2px;
+        content: '';
+        background: url('../images/shapes/shape-bottom-dark.svg') bottom center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+        z-index: 2;
+
+    }
+}
+
+.isIE {
+    .constellation-header {
+        //background: red;
+        &:before {
+            background: url('../images/shapes/constellation-outline.svg') center / 150% no-repeat;
+        }
+
+        .constellation-header__inner {
+            display: block;
+        }
+    }
+}
+
+.constellation-logo {
+    display: block;
+    max-width: 80%;
+    width: 394px;
+    margin: 0 auto 30px;
+}
+
+// ------------------------------------
+//  Inner
+// ------------------------------------
+
+.constellation-header__inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 130px 0;
+    color: $white;
+    z-index: 3;
+
+    .github-logo {
+        background: $black;
+        padding: 3px 10px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+
+    .constellation-header__content {
+        //max-width: $container-percentage;
+        max-width: 750px;
+        margin: 0 auto;
+
+        img {
+            display: inline-block;
+            max-width: 394px;
+            margin-bottom: 30px;
+        }
+
+        .h3-display {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// ------------------------------------
+//  Learn More Footer
+// ------------------------------------
+.constellation-header__ft {
+    position: absolute;
+    bottom: 40px;
+    color: $gray-dark;
+    width: 140px;
+    text-align: center;
+    left: calc(50% - 70px);
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        border: 1px solid $gray-dark;
+        top: calc(100% + 5px);
+        left: calc(50% - 5px);
+        opacity: 0;
+        transition: opacity 0.4s ease-out;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 1px;
+        height: 80px;
+        background: $gray-dark;
+        top: calc(100% + 14px);
+        left: calc(50% - 1px);
+        transform: scaleY(0);
+        transform-origin: top center;
+        transition: transform 1s ease-out;
+
+        @include start-at($medium) {
+            height: 130px;
+        }
+    }
+}
+
+
+
+// ------------------------------------
+//  In View
+// ------------------------------------
+
+.constellation-header.in-view {
+
+    .constellation-header__ft {
+
+        &:before {
+            transition-delay: 0.6s;
+            opacity: 1;
+        }
+        &:after {
+            transition-delay: 1s;
+            transform: scaleY(1);
+        }
+
+    }
+}
+
+
+// ------------------------------------
+// Light
+// ------------------------------------
+@keyframes pulseCircle {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+$gradientColor: #FFFFFF;
+
+.constellation-header .light {
+
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 2s ease;
+}
+
+.page-loaded .constellation-header .light {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.4;
+    z-index: 0;
+    background: radial-gradient(ellipse at center, rgba($gradientColor,1) 0%,rgba($gradientColor,0) 67%,rgba($gradientColor,0) 100%);
+    transition-delay: 3s;
+    animation-delay: 3s;
+    transform: scale(1);
+    animation: pulseCircle 5s infinite;
+}

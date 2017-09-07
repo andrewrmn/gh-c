@@ -1,0 +1,139 @@
+// ---------------------------------------------------------------------
+//  Form Styles
+// ---------------------------------------------------------------------
+
+.registration-form {
+    padding: 0 0 60px;
+    text-align: center;
+
+    #mc_embed_signup {
+        width: 480px;
+        max-width: 100%;
+        margin: 10px auto 0;
+    }
+
+    @media (min-width: $medium) {
+        padding: 0 0 95px;
+    }
+
+}
+
+$form-height: 40px;
+
+#mc_embed_signup_scroll {
+    display: flex;
+
+    .mc-field-group {
+        flex-grow: 1;
+    }
+}
+
+.subscribe-form {
+    position: relative;
+    display: block;
+    padding: 0 $container-padding;
+
+    @include start-at($medium){
+        padding: 0 0 0 15px;
+        margin-top: 0;
+    }
+
+    input:focus {
+        outline: 0;
+    }
+
+    input[type="email"] {
+        background-color: $black;
+        width: 100%;
+        display: block;
+        border: none;
+        border-radius: 0;
+        border: 1px solid $white;
+        border-right: none;
+        height: $form-height;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: lighten($gray, 20%);
+        //line-height: 1;
+        font-size: 1.6rem;
+    }
+
+    button {
+        appearance: none;
+        display: block;
+        text-align: center;
+        background: $white;
+        font-family: $display;
+        height: $form-height;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        color: $gray-dark;
+        width: 123px;
+        border: 1px solid $white;
+        transition: all $trans;
+
+        &:hover,
+        &:active {
+            background: $black;
+            cursor: pointer;
+        }
+    }
+
+    .mce_inline_error + .mce_inline_error {
+        position: absolute;
+        top: 100%;
+        background: transparent !important;
+        color: $error !important;
+        font-weight: 400!important;
+        margin: 0 !important;
+        font-size: 1.2rem;
+    }
+
+    #mce-success-response {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px;
+    }
+}
+
+
+
+// ----------------------------------------
+// Placeholder Styles
+// ----------------------------------------
+
+@mixin placeholder-styles {
+    font-style: italic;
+    color: lighten($gray-dark, 5%);
+    opacity: 1;
+    transition: opacity $transition;
+}
+
+::-webkit-input-placeholder {
+    @include placeholder-styles;
+}
+::-moz-placeholder {
+  @include placeholder-styles;
+}
+:-ms-input-placeholder {
+  @include placeholder-styles;
+}
+:-moz-placeholder {
+  @include placeholder-styles;
+}
+
+input:focus {
+    &::-webkit-input-placeholder {
+        opacity: 0.2;
+    }
+    &::-moz-placeholder {
+        opacity: 0.2;
+    }
+    &:-ms-input-placeholder {
+        opacity: 0.2;
+    }
+    &:-moz-placeholder {
+        opacity: 0.2;
+    }
+}

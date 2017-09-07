@@ -1,0 +1,220 @@
+- city: Brisbane
+  date: September 26 – 27, 2017
+  startDate: Sept. 26
+  endDate: Sept. 27
+  startDateFull: September 26
+  endDateFull: September 27
+  startTimeDay1: 18&#58;00
+  startTimeDay2: 08&#58;00
+  #options: purple, teal, gold, navy, red, pink, darkred, blue, green, darkpurple
+  color: teal
+  ticketLink:
+  introText: This is your chance to meet experts, share work, and contribute to the future of software—together.
+
+  location: Ironhack
+  address: Paseo de la Chopera, 14
+  country: Spain
+  zip: 28045
+  directionsLink: https://goo.gl/maps/JNaRo6Bv9bM2
+
+  day1Brief: Hear from Europe’s top tech and community leaders, and meet fellow builders at this one-of-kind community conference. We’ll spend an evening exploring what’s new, what’s to come, and how you can get involved.
+  day1Intro: Hear from Europe’s top tech and community leaders, and meet fellow builders at this one-of-kind community conference. We’ll spend an evening exploring what’s new, what’s to come, and how you can get involved. Everyone interested in the future of software is welcome to sign up and bring a friend, or two.
+
+  day2Brief: This one-day event brings together team leaders and entrepreneurs to discuss what (and how) they’re using GitHub at work.
+  day2Intro: This one-day event brings together team leaders and entrepreneurs to discuss what (and how) they’re using GitHub at work. This portion of Constellation is open to everyone, but you’ll find it more interesting if your team is using or considering <a href="https://github.com/business" target="_blank">GitHub for Business</a>.
+
+
+
+  speakers:
+    - name: Devin Morrison
+      jobTitle: Developer
+      company: Github
+      bio: Devin Morrison is a dolor sit amet, consectetur adipiscing elit. Praesent eu lacus id urna porttitor iaculis et vitae purus. Proin at pharetra dolor. Curabitur pretium blandit placerat. Praesent a vehicula quam, quis porttitor dolor. Nullam elementum non felis eget maximus. Donec quis ex quis sapien fringilla elementum. Vivamus ac vehicula neque, et sagittis elit. Integer rutrum odio non finibus luctus. Curabitur nec faucibus eros.
+      headshot: speaker-fpo.jpg
+      twitterLink: http://twitter.com
+      gitHubLink: http://gtihub.com
+      id: devin-morrison
+      day: 1
+
+    - name: Machisté Quintana
+      jobTitle: Software Engineer
+      company: Slack
+      bio: Machisté Quintana is a dolor sit amet, consectetur adipiscing elit. Praesent eu lacus id urna porttitor iaculis et vitae purus. Proin at pharetra dolor. Curabitur pretium blandit placerat. Praesent a vehicula quam, quis porttitor dolor. Nullam elementum non felis eget maximus. Donec quis ex quis sapien fringilla elementum. Vivamus ac vehicula neque, et sagittis elit. Integer rutrum odio non finibus luctus. Curabitur nec faucibus eros.
+      headshot: speaker-fpo-2.jpg
+      twitterLink: http://twitter.com
+      gitHubLink: http://gtihub.com
+      id: machiste-quintana
+      day: 1
+
+    - name: Susan Clifford
+      jobTitle: Owner
+      company: Secret Cow Level
+      bio: Susan is a dolor sit amet, consectetur adipiscing elit. Praesent eu lacus id urna porttitor iaculis et vitae purus. Proin at pharetra dolor. Curabitur pretium blandit placerat. Praesent a vehicula quam, quis porttitor dolor. Nullam elementum non felis eget maximus. Donec quis ex quis sapien fringilla elementum. Vivamus ac vehicula neque, et sagittis elit. Integer rutrum odio non finibus luctus. Curabitur nec faucibus eros.
+      headshot: speaker-fpo-3.jpg
+      twitterLink:
+      gitHubLink:
+      id: susan-clifford
+      day: 1
+
+    - name: Paul Frazee
+      jobTitle: Organizer
+      company: Beaker Browser
+      bio: Paul is a dolor sit amet, consectetur adipiscing elit. Praesent eu lacus id urna porttitor iaculis et vitae purus. Proin at pharetra dolor. Curabitur pretium blandit placerat. Praesent a vehicula quam, quis porttitor dolor. Nullam elementum non felis eget maximus. Donec quis ex quis sapien fringilla elementum. Vivamus ac vehicula neque, et sagittis elit. Integer rutrum odio non finibus luctus. Curabitur nec faucibus eros.
+      headshot: speaker-fpo-2.jpg
+      twitterLink:
+      gitHubLink:
+      id: paul-frazee
+      day: 2
+
+    - name: Samuel Attard
+      jobTitle: Electron Contributor
+      company: University of Melbourne
+      bio: I'm a 20-year-old student, I grew up in the UK and NZ but I'm currently studying Computer Science in Melbourne, Australia. I've been an active Electron contributor since early 2016 and built many modules and utilities to assist in the development of Electron apps. I'm really excited about the future of Electron apps, even the progress we have made as a community in the last year alone is amazing and I'm hoping to share some of the awesome bits of that progress.
+      headshot: speaker-fpo-3.jpg
+      twitterLink:
+      gitHubLink:
+      id: samuel-attard
+      day: 2
+
+    - name: Zeke Sikelianos
+      jobTitle: Atom/Electron Developer
+      company: GitHub
+      bio: An engineer on GitHub's Electron team working to make it easier for people to build native experiences with open web technologies.
+      headshot: speaker-fpo.jpg
+      twitterLink: zeke
+      gitHubLink: zeke
+      id: zeke-sikelianos
+      day: 2
+
+
+  day1Sessions:
+    - time: 18:00 – 18:30
+      title: REGISTRATION
+      # paste in speaker ID
+      speaker:
+
+    - time: 18:30 – 19:30
+      title: Speaker Talk About Something
+      # paste in speaker ID
+      speaker: devin-morrison
+
+    - time: 19:30 – 20:00
+      title: A GitHub Talk About Another Topic Right Now
+      # paste in speaker ID
+      speaker: machiste-quintana
+
+    - time: 20:30 – 21:00
+      title: GitHub Talk About Another Topic of the Night
+      # paste in speaker ID
+      speaker: susan-clifford
+
+    - time: 21:00 – 23:00
+      title: Pre-Party After-Party Party
+      # paste in speaker ID
+      speaker:
+      description: Hang around for cocktails and conversation
+
+
+  day2Sessions:
+    - time: 08:00 – 09:00
+      title: REGISTRATION
+      # paste in speaker ID
+      speaker:
+
+    - time: 09:00 – 09:30
+      title: Kickoff & Opening Keynote
+      # paste in speaker ID
+      speaker: paul-frazee
+
+    - time: 09:30 – 10:30
+      title: GitHub Enterprise&#58; Practical Approach to Repositories
+      # paste in speaker ID
+      speaker: samuel-attard
+
+    - time: 09:30 – 10:30
+      title: Workflows and Branching with Distributed Teams
+      # paste in speaker ID
+      speaker: susan-clifford
+
+    - time: 10:30 – 11:00
+      title: BREAK
+      # paste in speaker ID
+      speaker:
+
+    - time: 11:00 – 12:00
+      title: The Future of Development
+      # paste in speaker ID
+      speaker: susan-clifford
+
+    - time: 12:00 – 13:30
+      title: LUNCH
+      # paste in speaker ID
+      speaker:
+
+    - time: 13:30 – 15:00
+      title: Panel Discussion&#58; Start-Ups and Innovation in Development
+      # paste in speaker ID
+      multipleSpeakers: true
+      speakerList:
+          - speaker: machiste-quintana
+          - speaker: susan-clifford
+          - speaker: samuel-attard
+
+    - time: 15:00 – 15:30
+      title: Why GitHub is Totally Rad
+      # paste in speaker ID
+      speaker: machiste-quintana
+
+    - time: 15:00 – 15:30
+      title: BREAK
+
+    - time: 15:30 – 16:30
+      title: The Greatest Talk Known to Mankind
+      # paste in speaker ID
+      speaker: zeke-sikelianos
+
+    - time: 16:30 – 17:00
+      title: Closing Thoughts
+      # paste in speaker ID
+      speaker: paul-frazee
+
+    - time: 17:00 – 18:00
+      title: Cocktails and Apps
+      # paste in speaker ID
+      speaker:
+
+    - time: 18:00 – 20:00
+      title: The After Party
+      # paste in speaker ID
+      speaker:
+
+
+
+
+  faqs:
+    - question: Do I need my ID for entry?
+      answer: An email confirmation is all you need to check you in.
+
+    - question: What language will the events be in?
+      answer: Constellation Madrid presenters will be speaking in English.
+
+    - question: Will parking be available?
+      answer: We highly encourage attendees to take public transportation or ridesharing services to events. Parking is not provided at the venue but can be found in the general area.
+
+    - question: Will there be a place for me to store things?
+      answer: Yes, we’ll have a coat check area. Please don’t leave any valuables.
+
+    - question: Where do I go if I lose something?
+      answer: Find a GitHub team member if you lose something while at the event. Email <a href="mailto:events@github.com">events@github.com</a> if you realize you lost something after.
+
+    - question: Do you provide meals?
+      answer: We’ll provide light bites and beverages at [Constellation by night], and breakfast and lunch will be served at [daytime event name].
+
+    - question: Do you accommodate special dietary needs?
+      answer: Gluten free, dairy free, vegan, and vegetarian options are always provided at our events. If you have additional dietary needs, please let us know at least 48 hours in advance and we’ll do our best to accommodate you.
+
+    - question: Will non-alcoholic options be available at the meetup?
+      answer: Yes
+
+    - question: What if I don’t want my picture taken?
+      answer: Please let a GitHub team member know upon check-in. You’ll be provided with a red lanyard to let our photographer know.

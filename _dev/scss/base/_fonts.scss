@@ -1,0 +1,21 @@
+// ---------------------------------------------------------------------
+// Font Imports
+// ---------------------------------------------------------------------
+
+
+@font-face {
+    font-family: 'track';
+    src: url('../fonts/track_italic-webfont.woff2') format('woff2'),
+         url('../fonts/track_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'track';
+    src: url('../fonts/track-webfont.woff2') format('woff2'),
+         url('../fonts/track-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

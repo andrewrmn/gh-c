@@ -1,0 +1,42 @@
+// ---------------------------------------------------------------------
+//  Mixins
+// ---------------------------------------------------------------------
+
+@mixin container {
+    width: $container-percentage;
+    margin: 0 auto;
+    max-width: $container-width;
+    transition: max-width $transition;
+}
+
+@mixin visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.bg-image--fallback {
+
+        img {
+            display: none;
+        }
+    }
+}

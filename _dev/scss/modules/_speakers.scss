@@ -1,0 +1,269 @@
+// ---------------------------------------------------------------------
+//  Speaker Styles
+// ---------------------------------------------------------------------
+
+.speakers {
+    header {
+        margin-bottom: 10px;
+    }
+}
+
+.speaker-list  {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    > * {
+        margin-bottom: 20px;
+    }
+
+    @include start-at($small) {
+
+        > * {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        > *:nth-child(2n + 2) {
+            margin-right: 0;
+        }
+    }
+
+    @include start-at($medium) {
+        > *,
+        > *:nth-child(2n + 2) {
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+
+        > *:nth-child(3n + 3) {
+            margin-right: 0;
+        }
+    }
+}
+
+
+.speaker-preview {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    border-bottom: 1px solid $white;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.1);
+
+    transition: transform $transition;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+
+        .speaker-preview__info:after {
+            transform: translate3d(8px, 0, 0);
+        }
+    }
+
+    @include start-at($small) {
+        width: calc(50% - 10px);
+    }
+
+    @media(min-width: $medium) {
+        width: calc(33.33333333334% - 20px);
+    }
+
+    .speaker-preview__info {
+        width: 100%;
+        height: 125px;
+        bottom: 0;
+        left: 0;
+        background: $white;
+        color: $black;
+        z-index: 2;
+        padding: 5px $container-padding;
+        display: flex;
+        align-items: center;
+        text-align: center;
+
+        > * {
+            width: 100%;
+        }
+    }
+
+    .speaker-preview__image {
+        position: relative;
+        width: 100%;
+        height: 280px;
+
+        @include start-at($small) {
+            height: 315px;
+        }
+
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+
+// ----------------------------------------
+// Modal
+// ----------------------------------------
+
+.speaker {
+    width: 100%;
+    background: $white;
+
+    @media(min-width: $medium) {
+		display: flex;
+		align-items: stretch;
+	}
+}
+.speaker--single {
+    @media(min-width: $small) {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.speaker-profile {
+    width: 100%;
+    //background: $black;
+    color: $white;
+
+    padding: 15px;
+
+    @media (min-width: $medium) {
+        padding: 40px;
+    }
+
+
+    @media(min-width: $medium) {
+        max-width: 400px;
+    }
+
+    .speaker-image {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .speaker-info {
+        &:before {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: $white;
+            margin-bottom: 20px;
+        }
+    }
+
+    .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 20px;
+
+        > * {
+            margin-right: 10px;
+        }
+
+        a {
+            position: relative;
+            display: block;
+            transition: opacity $transition;
+            color: $white;
+            z-index: 1;
+
+            &:after {
+                content: '';
+                display: block;
+                border-radius: 50%;
+                width: 28px;
+                height: 28px;
+                background: $white;
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                z-index: -1;
+            }
+
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+        svg {
+            fill: currentColor;
+        }
+    }
+}
+
+.speaker-modal-content {
+    display: flex;
+    align-items: center;
+    padding: 40px $container-padding;
+    //background: $brand;
+
+    @media(min-width: $medium) {
+        width: 60%;
+        padding: 40px 50px;
+    }
+
+    .h2 {
+        letter-spacing: 2px;
+    }
+}
+
+
+
+// ----------------------------------------
+// Multiple Speakers
+// ----------------------------------------
+
+.speaker-profiles {
+    display: flex;
+    flex-grow: 1;
+    background: $black;
+}
+
+.speaker--single {
+
+    .speaker-profiles {
+        min-width: 40%;
+    }
+
+}
+
+
+.speaker-image-wrap {
+    overflow: hidden;
+    width: 100%;
+    padding-top:100%;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: absolute;
+        object-fit: cover;
+        width:100%;
+        height:100%;
+    }
+}
+
+@media (max-width: $medium) {
+    .isIE .speaker-image-wrap {
+        img {
+            object-fit: none;
+            left: 50%;
+            transform: translateX(-50%);
+            width: auto;
+            max-width: 200%;
+        }
+    }
+}

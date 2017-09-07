@@ -1,0 +1,36 @@
+// ---------------------------------------------------------------------
+//  Section Styles (Vertical Spacing)
+// ---------------------------------------------------------------------
+
+.section {
+    padding: 50px 0;
+
+    @include start-at($medium) {
+        padding: 80px 0;
+    }
+}
+
+.section--tall {
+    display: block;
+    padding: 80px 0;
+
+    @include start-at($medium) {
+        padding: 100px 0;
+    }
+}
+
+.section--short {
+    padding: 30px 0;
+
+    @include start-at($medium) {
+        padding: 50px 0;
+    }
+}
+
+.section--flush-bottom {
+    padding-bottom: 0;
+}
+
+.section--flush-top {
+    padding-top: 0;
+}

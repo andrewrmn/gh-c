@@ -1,0 +1,154 @@
+// ---------------------------------------------------------------------
+//  FAQ Styles
+// ---------------------------------------------------------------------
+
+#FAQ {
+
+    .fancy-header {
+        // background: $white;
+        // width: 280px;
+        margin: -30px auto 0;
+    }
+
+    .border-section__dots-left {
+        top: 40%;
+
+        &.in-view {
+            top: 20%;
+        }
+    }
+    .border-section__dots-right {
+        top: 60%;
+
+        &.in-view {
+            top: 80%;
+        }
+    }
+
+    .border-section__inner {
+
+        &:before {
+            position: absolute;
+            content: '';
+            width: 220px;
+            background: $white;
+            display: block;
+            height: 60px;
+            left: calc(50% - 110px);
+            top: 0;
+            transform: translateY(-50%);
+
+            @include start-at($medium){
+                width: 280px;
+                left: calc(50% - 140px);
+            }
+        }
+    }
+
+    a {
+        text-decoration: underline;
+        font-style: italic;
+    }
+}
+
+.ieIE #faqs {
+    .line,
+    .line.in-view {
+        display: none;
+    }
+}
+
+// ----------------------------------------
+// FAQ Group
+// ----------------------------------------
+
+.faq-questions {
+    list-style: decimal;
+    list-style-position: inside;
+
+    li {
+
+        + li {
+            margin-top: 30px;
+        }
+    }
+
+    .question {
+        font-size: 1.8rem;
+        font-weight: 400;
+        display: inline;
+
+        @include start-at($medium){
+            font-size: 2.0rem;
+        }
+    }
+
+    .answer {
+        font-style: italic;
+    }
+
+
+}
+
+
+// ----------------------------------------
+// Color List
+// ----------------------------------------
+
+
+
+// ----------------------------------------
+// FAQ Group
+// ----------------------------------------
+
+#faqs {
+    .line {
+        position: absolute;
+        z-index: -1;
+    }
+
+    .line-1 {
+        width: 428px;
+        height: auto;
+        top: -10px;
+        left: calc(100% - 368px);
+
+        @media (max-width: $large) {
+            left: 70%;
+        }
+    }
+
+    .line-2 {
+        width: 368px;
+        height: auto;
+        top: -10px;
+        left: calc(100% - 368px);
+
+        @media (max-width: $large) {
+            left: 70%;
+        }
+    }
+
+    .line-3 {
+        width: 428px;
+        height: auto;
+
+        right: 80%;
+        bottom: -10px;
+
+        @media (max-width: $large) {
+            display: none;
+        }
+
+    }
+    .line-4 {
+        width: 410px;
+        height: auto;
+        right: 82%;
+        bottom: -10px;
+
+        @media (max-width: $large) {
+            display: none;
+        }
+    }
+}

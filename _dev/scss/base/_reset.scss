@@ -1,0 +1,40 @@
+// ---------------------------------------------------------------------
+//  Author: Andrew Ross with a little help from my friends
+//  Target Browsers: All Modern & IE10 +
+// ---------------------------------------------------------------------
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+// ----------------------------------------
+// HTML5 Block / Inline Block declarations
+// ----------------------------------------
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main,
+audio, canvas, video, svg {
+    display: block;
+}
+
+// ----------------------------------------
+// Form Resets
+// ----------------------------------------
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- META DATA -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+        <!--[if IE]><meta http-equiv="cleartype" content="on" /><![endif]-->
+        <meta name="theme-color" content= "#1A1D1E">
+
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+        <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+        <title>{{ site.title }} {% if page.categories == 'event' %}| {{ page.title }}{% endif %}</title>
+
+        <!-- FONTS -->
+        <script>
+          (function(d) {
+            var config = {
+              kitId: 'xcf6kvb',
+              scriptTimeout: 3000,
+              async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+          })(document);
+        </script>
+
+        <!-- CSS -->
+        <link rel="stylesheet" media="screen" href="/assets/css/main.min.css" />
+
+        <!-- ICONS -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/images/favicons/favicon.png" />
+        <link rel="apple-touch-icon" href="/assets/images/favicons/apple-touch-icon.png" />
+        <link rel="icon" href="/assets/images/favicons/android-favicon.png">
+    </head>
+
+    <body class="event-page {% if page.categories == 'event' %}event-{{ page.id }}{% else %}{{ page.id }}{% endif %}">
+        {% if page.categories == 'event' %}
+            {% include header.html %}
+        {% endif %}
+
+        <main id="content" class="main page-content fade-in" aria-label="Content">
+
+            {{ content }}
+
+        </main>
+
+        {% include footer.html %}
+
+        <!-- JAVASCRIPT -->
+        <script type="text/javascript" src="/assets/js/main.js"></script>
+    </body>
+</html>

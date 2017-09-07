@@ -1,0 +1,99 @@
+// ---------------------------------------------------------------------
+//  Site Footer Styles
+// ---------------------------------------------------------------------
+
+body.home .site-footer:after {
+    background: url('../images/shapes/shape-bottom-dark.svg') bottom center / 102% auto no-repeat;
+}
+
+.site-footer {
+    padding: 80px 0 20px;
+    width: 100%;
+    background: $black;
+
+    @include start-at($medium) {
+        padding: 140px 0 40px;
+    }
+
+    &:after {
+        width: 102%;
+        height: 80px;
+        left: -1%;
+        top: -1px;
+        content: '';
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 102% auto no-repeat;
+        display: block;
+        position: absolute;
+        transform: scale(1, -1);
+    }
+
+    a,
+    p {
+        color: $white;
+        font-size: 1.2rem;
+
+        @include start-at($medium) {
+            font-size: 1.6rem;
+        }
+    }
+
+    svg {
+        fill: $white;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        max-width: 1440px;
+        flex-wrap: wrap;
+
+
+
+        @include stop-at($medium) {
+            > * {
+                width: 100%;
+            }
+
+            .site-footer__legal {
+                order: 2;
+                margin-top: 20px;
+            }
+        }
+
+        @include start-at($medium) {
+            flex-wrap: nowrap;
+            text-align: left;
+            justify-content: space-between;
+        }
+    }
+}
+
+.code-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > * + * {
+        margin-left: 5px;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+}
+
+
+.event-page {
+    .registration-form .h2-display {
+        @include h5;
+    }
+}
+
+
+.isIE {
+    .site-footer:after {
+        background: url('../images/shapes/shape-bottom.svg') bottom center / 132% auto no-repeat;
+    }
+}

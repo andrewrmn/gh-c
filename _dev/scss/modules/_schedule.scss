@@ -1,0 +1,213 @@
+// ---------------------------------------------------------------------
+//  Schedule Styles
+// ---------------------------------------------------------------------
+
+$sb: $small;
+
+.schedule-wrap {
+    .fancy-header {
+        margin-bottom: 50px;
+
+        @include start-at($sb) {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+.schedule {
+    width: 100%;
+}
+
+.schedule-day {
+
+    @include start-at($sb) {
+        display: flex;
+        align-items: stretch;
+    }
+
+    + .schedule-day {
+        border-top: 1px solid $black;
+    }
+}
+
+.schedule-day__title {
+    width: 100%;
+    padding: 40px $container-padding 20px;
+    background: $black;
+    color: $white;
+
+    > * {
+        line-height: 1;
+    }
+
+    @include start-at($sb) {
+        padding: 45px 20px;
+        width: 190px;
+        min-width: 190px;
+    }
+
+    @include start-at($large) {
+        padding: 45px 30px;
+        width: 210px;
+        min-width: 210px;
+    }
+}
+
+.schedule-day__events {
+    flex-grow: 1;
+    background: $gray-light;
+}
+
+
+// ----------------------------------------
+// Event
+// ----------------------------------------
+
+.event {
+    position: relative;
+
+    padding: 25px $container-padding;
+    transition: background $trans, box-shadow $trans;
+
+    @include start-at($sb) {
+        display: flex;
+        align-items: baseline;
+        padding: 25px 30px;
+        min-height: 120px;
+    }
+
+    &:hover {
+        .event-arrow {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+[data-click-target].event:hover {
+    background: $white;
+    box-shadow: 0 2px 4px 0 rgba(black, 0.07);
+}
+
+.event--multiple-speakers:hover {
+    background: $white;
+    box-shadow: 0 2px 4px 0 rgba(black, 0.07);
+
+    .event__speaker--list > span {
+        transition-delay: 0.2s;
+        color: $white;
+        &:before {
+            transform: scaleX(1);
+        }
+    }
+
+}
+
+.event-arrow {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 16px;
+    right: 30px;
+    top: calc(50% - 8px);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: transform 0.6s ease, opacity $trans;
+
+    svg {
+        fill: $black;
+        width: 20px;
+        height: 16px;
+    }
+}
+
+.event__time {
+
+    @include stop-at($sb) {
+        .h4 {
+            font-size: 2.0rem;
+            letter-spacing: 0px;
+        }
+    }
+
+    @include start-at($sb) {
+        width: 25%;
+        max-width: 240px;
+        min-width: 125px;
+    }
+
+    @include start-at($large) {
+        width: 30%;
+    }
+}
+
+.event__title {
+    flex-grow: 1;
+    padding: 5px 0;
+    color: $gray;
+
+    @include start-at($sb) {
+        width: 75%;
+        padding: 0 20px;
+    }
+
+    @include start-at($large) {
+        width: 70%;
+    }
+}
+
+.event__speaker {
+    font-style: italic;
+}
+
+.event__speaker--list {
+    > * {
+        margin-right: 10px;
+        position: relative;
+        transition: color 0.8s ease;
+        z-index: 1;
+        display: inline-block;
+        margin-bottom: 4px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: $black;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.8s ease;
+            z-index: -1;
+        }
+    }
+    > *:after {
+        content: '/ ';
+    }
+
+    > *:last-child:after {
+        display: none;
+    }
+}
+
+
+// ----------------------------------------
+//
+// ----------------------------------------
+
+@keyframes pulseBg {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+}

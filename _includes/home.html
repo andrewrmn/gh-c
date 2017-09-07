@@ -1,0 +1,47 @@
+
+
+<!-- Content Introduction -->
+<header id="" class="constellation-header border-section" data-detect-viewport>
+    <div class="constellation-header__inner border-section__inner">
+        <img class="github-logo" src="assets/images/svgs/github-logo.svg" alt=""  />
+        <div class="border-section__content">
+            <div>
+                <img data-animate-in="" class="constellation-logo" src="assets/images/GitHub-Constellation-logo-full.svg" alt=""  />
+                <div class="text-group" data-animate-in="up" data-animate-in-delay="700">
+                    <h2 class="h3-display">Build where you are</h2>
+                    <p data-animate-in="up">Join the GitHub Team for a two-part event celebrating software builders and entrepreneurs in your community. Whether you’re a new developer or leading a team of them, we’ve got you covered.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="constellation-header__ft" data-animate-in="up" data-animate-in-delay="1000" data-scroll-to="events">
+            <p class="h3-display" data-animate-in="bounce">Learn More</p>
+        </div>
+
+        <span class="border-section__dots-left" data-detect-viewport=""></span>
+        <span class="border-section__dots-right" data-detect-viewport=""></span>
+    </div>
+    <span class="light"></span>
+</header>
+
+<div class="events" id="events">
+    <header class="bg-black text-center">
+        <div class="container container--thin section text-center text-white text-group">
+            <h2 class="h2-display" data-animate-in="up">Coming to a city near&nbsp;you</h2>
+            <p data-animate-in="up" data-animate-in-delay="200">We’re bringing Constellation to communities around the world. We’ll keep adding stops to this list, so stay tuned if you don’t see a convenient location to meet us.</p>
+        </div>
+    </header>
+    <ul class="event-preview-list">
+        {% for city in site.data.cities %}
+        <li data-animate-in="up">
+            <article class="event-preview event-theme--{{ city.color }}">
+                <a href="/{{ city.city|downcase | replace:' ','-' }}/">
+                    <div class="event-preview__index h3-display">{{ city.country }}</div>
+                    <h2 class="h1-display event-preview__title h1-displayS">{{ city.city }}</h2>
+                    <p class="event-preview__dates">{{ city.date }}</p>
+                </a>
+            </article>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

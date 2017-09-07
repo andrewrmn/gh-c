@@ -1,0 +1,14 @@
+
+
+<li class="speaker-preview" data-click-target="{{speaker.id}}" data-click-bodyClass="modal-is-active" data-animate-in="up">
+    <figure class="speaker-preview__image bg-image" style="background: url('assets/images/speakers/{{speaker.headshot}}') center / cover no-repeat;">
+        <img src="/assets/images/speakers/{{speaker.headshot}}" alt="headshot of {{ speaker.name }}" />
+    </figure>
+    <div class="speaker-preview__info">
+        <div>
+            <h3 class="h5 speaker-name">{{ speaker.name }}</h3>
+            <p class="text-italic">{{ speaker.jobTitle }}</p>
+            <p>{{ speaker.company }}</p>
+        </div>
+    </div>
+</li>

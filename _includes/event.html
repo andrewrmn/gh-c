@@ -1,0 +1,146 @@
+
+{% assign cityId = event.city|downcase | replace:' ','-' %}
+
+
+<article id="{{ cityId }}" class="constellation-event event-theme--{{ event.color }}" data-theme-color="{{ event.color }}">
+
+    <header class="event-header page-section" id="top" data-detect-viewport>
+        <div class="event-header__inner">
+            <div class="container text-group-tall">
+                <figure class="event-logo" data-animate-in="">
+                    <img src="/assets/images/event-logo-mark.svg" alt="GitHub Constellation event in {{ event.city }}" />
+                    <h2>{{ event.city }}</h2>
+                </figure>
+                <div class="text-group event-header__intro">
+                    <p class="p-lg" data-animate-in="up" data-animate-in-delay="100">{{ event.introText }}</p>
+                </div>
+                <div class="event-header__overview">
+                    <div>
+                        <h3 class="h3" data-scroll-to="day-1" data-scroll-offset="80" data-animate-in="up" data-animate-in-delay="100">Day 1: Explore ({{ event.startDate }})</h3>
+                        <p class="p-sm" data-animate-in="up" data-animate-in-delay="200">{{ event.day1Brief }}</p>
+                    </div>
+                    <div data-animate-in="">
+                        <h3 class="h3" data-scroll-to="day-2" data-scroll-offset="100" data-animate-in="up" data-animate-in-delay="100">Day 2: Align ({{ event.endDate }})</h3>
+                        <p class="p-sm" data-animate-in="up" data-animate-in-delay="200">{{ event.day2Brief }}</p>
+                    </div>
+                </div>
+                <footer class="text-group">
+                    <p class="p-sm text-italic" data-animate-in="up" data-animate-in-delay="300">Register for the event that fits your interests—or join us for both!</p>
+                    <div data-animate-in="up" data-animate-in-delay="400">
+                        <a class="btn btn--white" href="{{ event.ticketLink }}" target="_blank" rel="nofollow noreferrer">Get Your Ticket</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </header>
+
+    <article class="event-day container-full section page-section" id="day-1">
+        <header class="fancy-header theme-color container" data-animate-in="up">
+            <h3 class="h4">Day 1</h3>
+            <p class="h1">Explore</p>
+            <figure>
+                <svg><use xlink:href="#shape-cluster"></use></svg>
+            </figure>
+        </header>
+        <div class="event-day__info container section-sidebar">
+            <div class="event-day__info__sidebar text-group" data-animate-in="left">
+                <p>{{ event.startDateFull }} @ {{ event.startTimeDay1 }}</p>
+                <address>
+                    {{ event.location }}<br />
+                    {{ event.address }}<br />
+                    {{ event.zip }} {{ event.city }}, {{ event.country }}<br />
+                    <a class="link text-italic" href="{{ event.directionsLink }}" target="_blank">Get Directions</a>
+                </address>
+            </div>
+            <div class="event-day__info__content text-group-tall">
+                <p class="p-lg" data-animate-in="up">{{ event.day1Intro }}</p>
+                <a class="btn" href="{{ event.ticketLink }}" target="_blank" rel="nofollow noreferrer" data-animate-in="up">Get Day 1 Tickets</a>
+            </div>
+        </div>
+
+        <section class="speakers">
+            <header class="container text-center" data-animate-in="up">
+                <h2 class="h2">Day 1 Speakers</h2>
+            </header>
+            <div class="container--full constellation-shape-wrap">
+                <div class="container-wide">
+                    <ul class="speaker-list">
+                        {% for speaker in event.speakers %}
+                            {% include speaker.html %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <span class="constellation-shapes"></span>
+            </div>
+
+            <div class="speaker-modals">
+            {% for speaker in site.data.speakers %}
+                {% include speaker-modal.html %}
+            {% endfor %}
+            </div>
+        </section>
+    </article>
+
+
+    <article class="event-day page-section" id="day-2">
+        <header class="fancy-header theme-color container" data-animate-in="up">
+            <h3 class="h4">Day 2</h3>
+            <p class="h1">Align</p>
+            <figure>
+                <svg><use xlink:href="#shape-cluster"></use></svg>
+            </figure>
+        </header>
+        <div class="event-day__info container section-sidebar">
+            <div class="event-day__info__sidebar text-group" data-animate-in="left">
+                <p>{{ event.endDateFull }} @ {{ event.startTimeDay2 }}</p>
+                <address>
+                    {{ event.location }}<br />
+                    {{ event.address }}<br />
+                    {{ event.zip }} {{ event.city }}, {{ event.country }}<br />
+                    <a class="link text-italic" href="{{ event.directionsLink }}" target="_blank">Get Directions</a>
+                </address>
+            </div>
+            <div class="event-day__info__content text-group-tall">
+                <p class="p-lg" data-animate-in="up">{{ event.day2Intro }}</p>
+                <a class="btn" href="{{ event.ticketLink }}" target="_blank" rel="nofollow noreferrer" data-animate-in="up">Get Day 2 Tickets</a>
+            </div>
+        </div>
+
+        <!-- Speakers Section -->
+        <section class="speakers">
+            <header class="container text-center" data-animate-in="up">
+                <h2 class="h2">Day 2 Speakers</h2>
+            </header>
+            <div class="container--full constellation-shape-wrap">
+                <div class="container-wide">
+                    <ul class="speaker-list">
+                        {% for speaker in event.speakers %}
+                            {% include speaker.html %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <span class="constellation-shapes constellation-shapes--theme"></span>
+            </div>
+
+            <div class="speaker-modals">
+            {% for speaker in event.speakers %}
+                {% include speaker-modal.html %}
+            {% endfor %}
+            </div>
+        </section>
+    </article>
+
+
+    {% include schedule.html %}
+
+    {% include faqs.html %}
+
+
+    <div class="mobile-menu-trigger">
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</article>

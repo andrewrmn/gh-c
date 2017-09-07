@@ -1,0 +1,164 @@
+// ---------------------------------------------------------------------
+//  Event Themes
+// ---------------------------------------------------------------------
+
+@mixin event-preview($color) {
+    .event-preview__index,
+    .theme-color,
+    .link,
+    .social-links a,
+    .event__speaker,
+    .speaker-profile .social-links svg {
+        color: $color;
+    }
+
+    &.event-preview:hover,
+    .event-header,
+    .schedule-day__title,
+    .event__speaker--list > *:before,
+    .mobile-menu-trigger,
+    .menu-is-active .mobile-menu-trigger span,
+    .event-header__overview > * + *:after {
+        background: $color;
+    }
+
+    @include stop-at($small) {
+        &.event-preview {
+            background: $color;
+        }
+
+        .site-navigation .is-active a,
+        .site-navigation a:hover {
+            color: $color;
+        }
+
+        .event-preview__index {
+            color: $white;
+        }
+    }
+
+    &.event-theme--navy,
+    &.event-theme--darkred,
+    &.event-theme--darkpurple,
+    &.event-theme--purple {
+        .event-preview__index {
+            color: lighten($color, 20%);
+
+            @include stop-at($small) {
+                color: $white !important;
+            }
+        }
+
+        &:hover {
+            .event-preview__index {
+                color: $white;
+            }
+        }
+    }
+
+    .constellation-shapes--theme {
+        background: $color url('../images/shapes/constellation.svg') center / cover no-repeat;
+    }
+
+    .schedule-day + .schedule-day {
+        border-color: $color;
+
+        .schedule-day__title {
+            background: rgba($color, 0.84);
+        }
+    }
+
+
+    &.constellation-event .btn {
+        color: $color;
+        border-color: $color;
+        &:before {
+            border-color: $color;
+        }
+
+        &:after {
+            border-color: $color;
+            background: $color;
+        }
+    }
+
+    &.constellation-event .btn--white {
+        color: $color;
+
+        &:before,
+        &:after {
+            border-color: $white;
+            background: $color;
+        }
+    }
+
+    .event-arrow svg {
+        fill: $color;
+    }
+
+    .border-section__inner {
+        border-color: $color;
+    }
+    .border-section__dots-left,
+    .border-section__dots-right,
+    .border-section__dots-bottom {
+        &:before,
+        &:after {
+            background: $white;
+            border-color: $color;
+        }
+
+        &:after {
+            background: $color;
+        }
+    }
+
+    ::selection {
+        background: $color;
+    }
+
+    ::-moz-selection {
+        background: $color;
+    }
+
+}
+
+.event-theme--purple {
+    @include event-preview($purple);
+}
+
+.event-theme--teal {
+    @include event-preview($teal);
+}
+
+.event-theme--gold {
+    @include event-preview($gold);
+}
+
+.event-theme--navy {
+    @include event-preview($navy);
+}
+
+.event-theme--red {
+    @include event-preview($red);
+}
+
+.event-theme--darkred {
+    @include event-preview($darkred);
+}
+
+.event-theme--pink {
+    @include event-preview($pink);
+}
+
+.event-theme--blue {
+    @include event-preview($blue);
+}
+
+.event-theme--darkpurple {
+    @include event-preview($darkpurple);
+}
+
+.event-theme--green {
+    @include event-preview($green);
+}

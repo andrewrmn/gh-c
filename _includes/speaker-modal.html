@@ -1,0 +1,70 @@
+
+
+<!-- Speaker Modal -->
+<article class="modal-wrap" id="{{speaker.id}}">
+    <div class="modal">
+        <div class="modal__close" data-click-target="{{speaker.id}}" data-click-bodyClass="modal-is-active">
+            <div>
+                <p class="sr-only">Close Modal</p>
+                <svg width="20" height="20"><use xlink:href="#shape-close"></use></svg>
+            </div>
+        </div>
+
+        <div class="modal__inner">
+            <div class="speaker speaker--single">
+                <div class="speaker-profiles bg-constellation">
+                    <div class="speaker-profile">
+                        <img class="speaker-image" src="/assets/images/speakers/{{speaker.headshot}}" alt="headshot of {{ speaker.name }}" />
+                        <div class="speaker-info">
+                            <h2 class="h4">{{speaker.name}}</h2>
+                            <p class="p-sm text-italic">{{speaker.jobTitle}}</p>
+                            <p class="p-sm">{{speaker.company}}</p>
+                            <ul class="social-links">
+                                {% if speaker.twitterLink|length %}
+                                <li>
+                                    <a href="{{ speaker.twitterLink }}" target="_blank" rel="nofollow noreferrer" title="link to {{ speaker.name }}'s twitter page">
+                                        <svg width="32" height="32"><use xlink:href="#shape-twitter"></use></svg>
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if speaker.gitHubLink|length %}
+                                <li>
+                                    <a href="{{ speaker.gitHubLink }}" target="_blank" rel="nofollow noreferrer" title="link to {{ speaker.name }}'s GitHub page">
+                                        <svg width="32" height="32"><use xlink:href="#shape-github"></use></svg>
+                                    </a>
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="speaker-modal-content">
+                    <div class="text-group">
+                        <div>
+                            <h5 class="h5">About</h5>
+                            <p>{{ speaker.bio }}</p>
+                        </div>
+                        {% for session in event.day1Sessions %}
+                            {% if session.speaker == speaker.id %}
+                                <div>
+                                    <h5 class="h5">Talk - {{ session.title }}</h5>
+                                    <p class="p-sm">{{ session.time }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        {% for session in event.day2Sessions %}
+                            {% if session.speaker == speaker.id %}
+                                <div>
+                                    <h5 class="h5">Talk - {{ session.title }}</h5>
+                                    <p class="p-sm">{{ session.time }}</p>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="modal-screen"></span>
+</article>
